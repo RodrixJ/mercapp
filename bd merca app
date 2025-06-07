@@ -1,0 +1,25 @@
+create database merca;
+use merca;
+
+create table propietario(
+id_Propietario int not null primary key auto_increment,
+nombre varchar(100) not null
+)engine=InnoDB;
+drop table propietario;
+create table tramo(
+id_Tramo int not null primary key auto_increment,
+nombreTramo varchar(100) not null,
+id_Propietario int,
+foreign key (id_Propietario) references Propietario(id_Propietario)
+)engine=InnoDB;
+
+create table Producto(
+id_Producto int not null primary key auto_increment,
+nombre_producto varchar(100) not null,
+precio float,
+marca varchar(100) not null,
+descripcion varchar(100) not null,
+imagen varchar(100),
+id_Tramo int,
+foreign key (id_Tramo) references Tramo(id_Tramo)
+)engine=InnoDB;
