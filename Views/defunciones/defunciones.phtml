@@ -1,0 +1,73 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>HappyMemories</h1>
+        <nav>
+            <ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="<?= BASE_URL ?>"index>Home</a></li>                <li class="breadcrumb-item active">Cementerio</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+            <div class="card"> 
+                <div class="card-header">
+                    <center>
+                        <h4 class="card-header">Registro y Listado de Cementerio</h4>
+                    </center>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end pt-3">
+                    <a href="<?=BASE_URL?>defunciones/agregar"  class="btn btn-primary float-right">
+                        <span class="fa fa-plus"></span>
+                        Agregar nuevo
+			        </a> 
+                    </div>
+                    
+                   
+                </div>
+                <div class="card-body mt-5">
+                
+                    <table id="table" class="display">
+                        <thead>
+                            <th>ID Defuncion</th>
+                            <th>Nombre Difunto</th>
+                         
+                            <th>Fecha Nacio</th>
+                            <th>Fecha Fallecio</th>
+
+                            <th>Acción</th>
+                        </thead>
+                        <tbody>
+                            <?= $this->tabla ?>
+                        </tbody>
+
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<!-- Modal -->
+<div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="qrModalLabel">QR Code</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img id="qrImage" src="" alt="Generated QR Code" class="img-fluid">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</main>

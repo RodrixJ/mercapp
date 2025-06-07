@@ -1,0 +1,127 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>HappyMemories</h1>
+        <nav>
+            <ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="<?= BASE_URL ?>"index>Home</a></li>                <li class="breadcrumb-item active">Producto</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <center>
+                        <h4 class="card-header">Registro y Listado de Productos</h4>
+                    </center>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end pt-3">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#modalAgregarProducto">
+                            <i class="fa-solid fa-plus"></i> Agregar Nuevo
+                        </button>
+                    </div>
+
+ 
+                </div>
+                <div class="card-body mt-5">
+
+                    <table id="table" class="display">
+                        <thead>
+                            <th>ID Producto</th>
+                            <th>Nombre Producto</th>
+                            <th>Precio</th>
+                            <th>Marca</th>
+                            <th>Descripcion</th>
+                            <th>Imagen</th>    
+                           
+
+                            <th>Acción</th>
+                        </thead>
+                        <tbody>
+                            <?= $this->tabla ?>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+      <!-- Modal  para agregar Municipio-->
+      <div class="modal fade" id="modalAgregarProducto" tabindex="-1"  data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#ecc006">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="color:#fff">Agregar Nuevo Tramo</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form class="row" method="post" id="formAgregarProducto" enctype="multipart/form-data">
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Tramo</label>
+                                <select class="form-select" name="tramo" id="tramo">
+                                    <?= $this->tramo?>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Nombre Producto</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            </div>
+
+                             <div class="mb-3 col-lg-6">
+                                <label for="" class="form-label">Marca Producto</label>
+                                <input type="text" class="form-control" id="marca" name="marca" required>
+                            </div>
+
+
+                            <div class="mb-3 col-lg-6">
+                                <label for="" class="form-label">Precio Producto</label>
+                                <div class="input-group mb-3">
+                                <span class="input-group-text">C$</span>
+                                
+                                <input type="text" class="form-control" id="precio" name="precio" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">descripcion Producto</label>
+                                
+                                <textarea class="form-control" name="descripcion" id="descripcion"></textarea>
+                            </div>
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Imagen Producto</label>
+                                <input type="file" class="form-control" id="imagen" name="imagen" required>
+                             </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-ban"></i> Cancelar</button>
+                    <button style="color:#fff" type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Agregar Producto</button>
+                </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+</main>

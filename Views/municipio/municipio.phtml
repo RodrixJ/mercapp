@@ -1,0 +1,147 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>HappyMemories</h1>
+        <nav>
+            <ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="<?= BASE_URL ?>"index>Home</a></li>                <li class="breadcrumb-item active">Municipio</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <center>
+                        <h4 class="card-header">Registro y Listado de Municipios</h4>
+                    </center>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end pt-3">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#modalAgregarMunicipio">
+                            <i class="fa-solid fa-plus"></i> Agregar Nuevo
+                        </button>
+                    </div>
+
+ 
+                </div>
+                <div class="card-body mt-5">
+
+                    <table id="table" class="display">
+                        <thead>
+                            <th>ID Municipio</th>
+                            <th>Municipio</th>
+                            <th>Departamento</th>
+                           
+
+                            <th>Acción</th>
+                        </thead>
+                        <tbody>
+                            <?= $this->tabla ?>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <!-- Modal  para agregar Municipio-->
+    <div class="modal fade" id="modalActualizarMunicipio" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#ecc006">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Datos De Municipio</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form class="row" method="post" id="formEditarMunicipio" enctype="multipart/form-data">
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">ID Municipio</label>
+                                <input type="text" class="form-control" id="idMunicipio" name="idMunicipio" required>
+                            </div>
+
+
+                           
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Nombre Departamento</label>
+                                <select class="form-select" name="departamentoUP" id="departamentoUP">
+                                    <?= $this->departamentos ?>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Nombre Municipio</label>
+                                <input type="text" class="form-control" id="nombreMunicipioUP" name="nombreMunicipioUP" required>
+                            </div>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-ban"></i> Cancelar</button>
+                    <button style="color:#fff" type="submit" class="btn btn-warning"><i class="fa-solid fa-rotate-right"></i> Agregar Registro</button>
+                </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+      <!-- Modal  para agregar Municipio-->
+      <div class="modal fade" id="modalAgregarMunicipio" tabindex="-1"  data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#ecc006">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="color:#fff">Agregar Nuevo Municipio</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form class="row" method="post" id="formAgregarMunicipio" enctype="multipart/form-data">
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Nombre Departamento</label>
+                                <select class="form-select" name="departamento" id="departamento">
+                                    <?= $this->departamentos ?>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Nombre Municipio</label>
+                                <input type="text" class="form-control" id="nombreMunicipio" name="nombreMunicipio" required>
+                            </div>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-ban"></i> Cancelar</button>
+                    <button style="color:#fff" type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i>Agregar Municipio</button>
+                </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+</main>

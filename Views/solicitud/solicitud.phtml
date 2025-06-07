@@ -1,0 +1,128 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>HappyMemories</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="<?= BASE_URL ?>" index>Home</a></li>
+                <li class="breadcrumb-item active">Solicitudes</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <center>
+                        <h4 class="card-header">Listado de Solicitudes de Clientes</h4>
+                    </center>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end pt-3">
+                        <!-- Button trigger modal -->
+
+                    </div>
+
+
+                </div>
+                <div class="card-body mt-5">
+
+                    <table id="table" class="display">
+                        <thead>
+                            <th>Imagen de lapida familiar</th>
+                            <th>Servicio Solicitado</th>
+                            <th>Fecha Solicitado</th>
+                            <th>Estado</th>
+                            <th>Observaciones</th>
+
+                            <th>Acción</th>
+                        </thead>
+                        <tbody>
+                            <?= $this->tabla ?>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- Modal  para acetar solicitudes de servicios-->
+    <div class="modal fade" id="modalActualizarSolicitud" tabindex="-1" data-bs-backdrop="static"
+        data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#ecc006">
+                    <h1 style="color:white;font-wight:bold" class="modal-title fs-5" id="exampleModalLabel">Formulario
+                        Aceptar Solicitud</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="mb-3 col-md-6 col-lg-12 ">
+                            <center> <label for="imgRecuerdo" class="form-label text-center">Estado Lapida Descanso</label></center>
+                            <a href=""
+                                data-fancybox="gallery" data-caption="Recuerdo">
+                                <img src="" class="img-fluid rounded mx-auto d-block" height="200 px" alt="">
+                            </a>
+                        </div>
+                        <form class="row" method="post" id="formSolicitarServicio" enctype="multipart/form-data">
+
+
+
+                            <input class="form-control" name="ubicacionServicio" id="ubicacionServicio" type="hidden">
+
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Servicio a Solicitar</label>
+                                <select class="form-select" name="servicioSolicitado" id="servicioSolicitado">
+                                    <?= $this->servicios ?>
+                                </select>
+                            </div>
+
+
+
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Dia que requiere el servicio</label>
+                                <input class="form-control" name="diaServicio" id="diaServicio" type="date">
+                            </div>
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Otros comentarios</label>
+                                <textarea class="form-control" name="otrosComentarios" id="otrosComentarios"></textarea>
+                            </div>
+
+
+
+
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-ban"></i>
+                        Cancelar</button>
+                    <button style="color:#fff" type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i>
+                        Agregar Registro</button>
+                </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</main>

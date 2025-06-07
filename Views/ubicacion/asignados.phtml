@@ -1,0 +1,196 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>HappyMemories</h1>
+        <nav>
+            <ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="<?= BASE_URL ?>"index>Home</a></li>                <li class="breadcrumb-item">Ubicación</li>
+                <li class="breadcrumb-item active">Asignados</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <center>
+                        <h4 class="card-header">Registro de Difuntos Asignados a una Ubucación de Descanso</h4>
+                    </center>
+
+
+
+                </div>
+                <div class="card-body mt-5">
+
+                    <table id="table" class="display">
+                        <thead>
+                            <th>Nombre Completo</th>
+                            <th>Cedula</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Fecha de Fallecimiento</th>
+                            <th>Latitud</th>
+                            <th>Longitud</th>
+
+
+
+
+
+                            <th>Acción</th>
+                        </thead>
+                        <tbody>
+                            <?= $this->tabla ?>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <!-- Modal  para agregar Departamento-->
+    <div class="modal fade" id="modalEditarAsignacion" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#ecc006;color:#FFF">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Asignación Ubicación de Descanso</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                       
+
+                            <div class="mb-3 col-lg-6">
+                                <label for="" class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" id="nombreCompletoUP" name="nombreCompletoUP"
+                                    required>
+                            </div>
+                            <div class="mb-3 col-lg-6">
+                                <label for="" class="form-label">Cedula</label>
+                                <input type="text" class="form-control" id="cedulaUP" name="cedulaUP">
+                            </div>
+
+                            <div class="mb-3 col-md-6 col-lg-6">
+                                <label for="imgRecuerdo" class="form-label">Recuerdo Del Difunto</label>
+                                <img name="imgRecuerdoUP" class="img-fluid rounded mx-auto d-block" height="200 px"
+                                    id="imgRecuerdoUP" src="" alt="imagen">
+                            </div>
+
+
+                            <div class="row">
+                                <div class="mb-3 col-lg-6">
+                                    <label for="" class="form-label">Fecha Nacio</label>
+                                    <input type="text" class="form-control" id="fechaNacioUUP" name="fechaNacioUUP">
+                                </div>
+                                <div class="mb-3 col-lg-6">
+                                    <label for="" class="form-label">Fecha Fallecio</label>
+
+                                    <input type="text" class="form-control" id="fechaFallecioUP" name="fechaFallecioUP">
+                                </div>
+
+
+                                <div class="mb-3 col-lg-6">
+                                    <label for="" class="form-label">Sexo</label>
+
+                                    <input type="text" class="form-control" id="sexoFallecioUP" name="sexoFallecioUP">
+                                </div>
+
+                                <div class="mb-3 col-lg-6">
+                                    <label for="" class="form-label">Edad</label>
+
+                                    <input type="text" class="form-control" id="edadFallecioUP" name="edadFallecioUP">
+                                </div>
+                            </div>
+
+                            <form class="row" method="post" id="formActualizarUbicacion" enctype="multipart/form-data">
+
+                            <h4 class="mt-4 mb-3">Asignar la Ubicación</h4>
+
+
+                            <div class="mb-3 col-lg-6">
+                                <input type="hidden" class="form-control" id="idUbicacionUP" name="idUbicacionUP">
+                            </div>
+
+                            <div class="mb-3 col-lg-6">
+                                <input type="hidden" class="form-control" id="idDefUp" name="idDefUp">
+                            </div>
+
+                    <div class="row mb-3">
+                        <div class="mb-3 col-lg-12">
+                            <label for="ubicacion" class="form-label">Cementerio Donde Descansa</label>
+
+                            <select name="cemterioDescansaUP" id="cemterioDescansaUP" class="form-select" style="width: 100%;height: auto;">
+                           
+                            <?=$this->cementerios ?>
+
+                            </select>
+                        </div> 
+
+                        <div class="mb-3 col-lg-6">
+                            <label for="" class="form-label">Latitud</label>
+                            <input type="text" class="form-control" id="latitudUbicacionUP" name="latitudUbicacionUP" required>
+                        </div>
+
+                        <div class="mb-3 col-lg-6">
+                            <label for="" class="form-label">Longitud</label>
+                            <input type="text" class="form-control" id="longitudUbicacionUP" name="longitudUbicacionUP" required>
+                        </div>
+
+                        <div class="mb-3 col-lg-12">
+                            <label for="" class="form-label">Descripcion Lugar Descanso</label>
+                           <textarea name="descripcionLugarUP" rows="4" id="descripcionLugarUP" class="form-control"></textarea>
+                        </div>
+
+
+
+
+                      
+
+                  
+
+                      
+
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-ban"></i>
+                        Cancelar</button>
+                    <button type="submit" class="btn btn-warning"><i class="fa-solid fa-rotate-right"></i> Agregar
+                        Registro</button>
+                </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+   
+
+</main>

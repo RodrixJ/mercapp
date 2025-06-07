@@ -1,0 +1,108 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>HappyMemories</h1>
+        <nav>
+            <ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="<?= BASE_URL ?>"index>Home</a></li>                <li class="breadcrumb-item">Cementerio</li>
+                <li class="breadcrumb-item active">Agregar</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title --> 
+
+    <section class="section dashboard">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <center>
+                        <h4 class="card-header">Registro de Cementerio</h4>
+                    </center>
+                    
+                </div> 
+                <div class="card-body mt-5">
+                    <div class="row">
+                    <form class="row" method="post" id="formAgregarCementerio" enctype="multipart/form-data">
+                    <div class="mb-3 col-lg-12">
+                        <label for="" class="form-label">Nombre Cementerio</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                    </div>
+                    
+                    
+                    <div class="mb-3 col-lg-6">
+                        <label for="" class="form-label">Departamento</label>
+                        <select id="departamento" name="departamento" class="form-select">
+                            <?=$this->departamentos?>
+                        </select>
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                        <label for="" class="form-label">Municipio</label>
+                        <select id="municipio" name="municipio" class="form-select">
+                            
+                        </select>
+                    </div>
+                   
+                    <div class="mb-3 col-lg-6">
+                        <label for="" class="form-label">Latitud</label>
+                        <input type="text" class="form-control" id="latitud" name="latitud">
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                        <label for="" class="form-label">Longitud</label>
+                        <input type="text" class="form-control" id="longitud" name="longitud">
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                        <label for="" class="form-label">Capacidad</label>
+                        <input type="number" class="form-control" id="capacidad" name="capacidad">
+                    </div>
+
+                    <div class="mb-3 col-lg-6">
+                        <label for="" class="form-label">Tipo</label>
+                        <select name="tipo" id="tipo" class="form-select">
+                        <option value="0">Seleccione una opción</option>
+                            <option value="Publico">Publico</option>
+                            <option value="Privado">Privado</option>
+                            <option value="Comunal">Comunal</option>
+                            <option value="Militar">Militar</option>
+                            <option value="Caridad">Caridad</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3 col-lg-6">
+                        <label for="" class="form-label">Hora Apertura</label>
+                        <input type="time" class="form-control" id="horaApertura" name="horaApertura">
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                        <label for="" class="form-label">Hora Cierre</label>
+                        <input type="time" class="form-control" id="horaCierre" name="horaCierre">
+                    </div>
+                   
+
+ 
+          
+               
+
+           
+
+                    </div>
+
+                </div>
+                <!-- End Card Body -->
+                <!-- Inicio de Card Footer -->
+                <div class="card-footer">
+                    <div class="row justify-content-end">
+                        <div class="col-lg-auto ">
+                    <a href="<?=BASE_URL?>cementerio" class="btn btn-danger"><i class="fa-solid fa-ban"></i> Regresar</a>
+                <button type="submit" style="color:#fff" class="btn btn-warning"><i class="fa-solid fa-plus"></i> Agregar Registro</button>
+                    </div>
+                    </div>
+
+                </div>
+
+                </form>
+
+
+            </div>
+        </div>
+
+    </section>
+
+</main>

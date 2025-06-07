@@ -1,0 +1,123 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>HappyMemories</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="<?= BASE_URL ?>index">Home</a></li>
+                <li class="breadcrumb-item active">Mapa</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <center>
+                        <h4 class="card-header">Mapa Interactivo</h4>
+                    </center>
+
+
+
+
+                </div>
+                <div class="card-body mt-5">
+
+                    <div id="map" style="width: 100%; height: 700px;"></div>
+
+                    <script>
+
+                        var direccion = [13.483399350750723, -86.58646656891322];
+                        var map = L.map('map').setView(direccion, 18);
+
+                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            maxZoom: 19,
+                            attribution: '&copy; HappyMemories'
+                        }).addTo(map);
+
+
+                        var ubicaciones = JSON.parse('<?= $this->datos ?>');
+                        console.log(ubicaciones);
+
+                        for (i = 0; i < ubicaciones.length; i++) {
+                            var icono = L.icon({ iconUrl: '<?= PLANTILLA ?>assets/img/iconoMapas.png' });
+                            marcador = L.marker([ubicaciones[i]['latitud'], ubicaciones[i]['longitud']], { icon: icono }).addTo(map);
+                            marcador.bindPopup('<div id="card" class="card shadow mb-4"><div style=" background: #ffec00" class="card-header py-3"><center><h5 style="color:black;" class="m-0 fw-bold">Aquí Descansa ' + [ubicaciones[i]['primer_nombre']] + ' ' + [ubicaciones[i]['primer_apellido']] + '</h5></center></div><div class="card-body"> <h6 style="color:black;"> <b>  Nombre Completo: </b> ' + [ubicaciones[i]['primer_nombre']] + ' ' + [ubicaciones[i]['segundo_nombre']] + ' ' + [ubicaciones[i]['primer_apellido']] + ' ' + [ubicaciones[i]['segundo_apellido']] + '<br> <b> Nacido el: </b>  ' + [ubicaciones[i]['fecha_nacimiento']] + ' <br> <b>Hasta:</b> ' + [ubicaciones[i]['fecha_ocurrencia']] + '   <br> <b>Con:</b> ' + [ubicaciones[i]['edad_cumplida']] + ' <b>Años de edad Cumplidos</b>  </h6> <br> <img class="rounded mx-auto d-block" style="height:80px"; src="<?= PLANTILLA ?>assets/img/' + [ubicaciones[0]['imagen_descanso']] + '">  </div>  <div class="card-footer"> <button id="verf" data-verPerfil=' + [ubicaciones[i]['id_defuncion']] + ' style="background-color: #17a2b8; border-color: #17a2b8;" type="button" class="btn btn-primary btn-sm float-right btnVerPerfil" data-bs-toggle="modal" data-bs-target="#modalPerfil"><span class="fa fa-search"></span> ver Perfil</button> </div>  </div>');
+                            /* marcador.bindPopup([ubicaciones[i]['nombre']]+'. <br> Ubicada en: '+[ubicaciones[i]['direccion']]);*/
+                            //.bindPopup('Farmacia. +"ubicaciones[i]['nombre']+" A pretty CSS popup.<br> Easily customizable.');
+
+                            /* console.log(ubicaciones[i]['longitud']);
+                              console.log(ubicaciones[i]['nombre']);
+                              console.log(ubicaciones[i]['latitud']);
+                              lat=ubicaciones[i]['longitud'];
+                              long=ubicaciones[i]['latitud'];
+                              console.log(lat);
+                              console.log(long);*/
+
+                            // L.marker(ubicaciones[i]['latitud'],ubicaciones[i]['longitud']).addTo(map);
+                            //L.marker([long,lat]).addTo(map);
+                        }
+
+
+                      
+          
+     
+
+                    </script>
+
+
+
+  
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- Modal  para agregar Departamento-->
+    <div class="modal fade" id="modalPerfil" tabindex="-1" 
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#ecc006;color:#FFF">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Perfil de Información y recuerdos</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                
+
+
+                    
+
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i>
+                        Cerrar</button>
+                   
+                </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</main>

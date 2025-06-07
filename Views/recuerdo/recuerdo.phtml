@@ -1,0 +1,192 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>HappyMemories</h1>
+        <nav>
+            <ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="<?= BASE_URL ?>"index>Home</a></li>                <li class="breadcrumb-item active">Recuerdo</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <center>
+                        <h4 class="card-header">Agregar Recuerdos Acerca De tu Pariente</h4>
+                    </center>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end pt-3">
+                        <!-- Button trigger modal -->
+                       
+                    </div>
+
+
+                </div>
+                <div class="card-body mt-5">
+
+                    <table id="table" class="display">
+                        <thead>
+                            <th>ID Difunto</th>
+                            <th>Nombre Difunto</th>
+
+                            <th>Acción</th>
+                        </thead>
+                        <tbody>
+                            <?= $this->tabla ?>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <!-- Modal  para agregar Recuerdo-->
+    <div class="modal fade" id="modalAgregarRecuerdo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Recuerdo</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+
+                       
+                        <div class="mb-3 col-lg-12">
+                            <label for="" class="form-label">Nombre Completo Familiar</label>
+                            <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" disabled>
+                        </div>
+
+                        <div class="mb-3 col-lg-3">
+                            <label for="" class="form-label">Fecha Nacimiento</label>
+                            <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" disabled
+                                disabled>
+                        </div>
+
+                        <div class="mb-3 col-lg-3">
+                            <label for="" class="form-label">Edad Cumplida</label>
+                            <input type="text" class="form-control" id="edad" name="edad" disabled>
+                        </div>
+
+                        <div class="mb-3 col-lg-3">
+                            <label for="sexo" class="form-label">Sexo</label>
+                            <select name="sexo" id="sexo" class="form-select" disabled>
+                                <option value="0">Seleciona Una Opción</option>
+                                <option value="Masculino">Hombre</option>
+                                <option value="Femenino">Mujer</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 col-lg-3">
+                            <label for="nacionalidad" class="form-label">Nacionalidad</label>
+                            <select id="nacionalidadDifunto" name="nacionalidadDifunto" class="form-select" disabled>
+                                <option value="0">Seleciona Una Opción</option>
+                                <option value="Nicaraguense">Nicaragüense</option>
+                                <option value="Extrangero">Extranjero</option>
+                            </select>
+                        </div>
+
+
+                        <div class="mb-3 col-lg-4">
+                            <label for="fechaDefuncion" class="form-label">Ocupación</label>
+                            <input type="text" class="form-control" name="ocupacionDifunto" id="ocupacionDifunto"
+                                disabled>
+                        </div>
+
+
+                        <h4 class="mt-4">B. Datos de la Defunción</h4>
+
+                        <div class="mb-3 col-lg-4">
+                            <label for="fechaDefuncion" class="form-label">Fecha de Defunción</label>
+                            <input type="date" class="form-control" name="fechaDefuncion" id="fechaDefuncion" disabled>
+                        </div>
+
+                        <div class="mb-3 col-lg-4">
+                            <label for="fechaDefuncion" class="form-label">Hora de Defunción</label>
+                            <input type="time" class="form-control" name="horaDefuncion" id="horaDefuncion" disabled>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <form id="formAgregarRecuerdo" method="post" enctype="multipart/form-data">
+
+                        <div class="mb-3 col-lg-12">
+                           
+                            <input type="hidden" class="form-control" id="idDefu" name="idDefu" >
+                        </div>
+
+                            <h4 class="mt-4">C. Añadir Recuerdo </h4>
+
+
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="fechaDefuncion" class="form-label">Seleccione Foto o Video MAX 10MB</label>
+                                <input type="file" class="form-control" name="recurso" id="recurso" required>
+                            </div>
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="fechaDefuncion" class="form-label">Descripción Recuerdo</label>
+                                <textarea class="form-control" name="descripcionRecuerdo" id="descripcionRecuerdo" required></textarea>
+                            </div>
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                    <!-- End Card Body -->
+                    <!-- Inicio de Card Footer -->
+                    <div class="card-footer">
+
+                        <div class="row justify-content-end">
+                            <div class="col-lg-auto ">
+
+
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i
+                                        class="fa-solid fa-ban"></i> Cancelar</button>
+                                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Agregar
+                                    Registro</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</main>

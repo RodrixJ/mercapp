@@ -1,0 +1,113 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>HappyMemories</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="<?= BASE_URL ?>" index>Home</a></li>
+                <li class="breadcrumb-item active">Servicios</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <center>
+                        <h4 class="card-header">Registro y Listado de Servicios Ofrecidos</h4>
+                    </center>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end pt-3">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#modalAgregarProveedor">
+                            <i class="fa-solid fa-plus"></i> Agregar Nuevo
+                        </button>
+                    </div>
+
+
+                </div>
+                <div class="card-body mt-5">
+
+                    <table id="table" class="display">
+                        <thead>
+                            <th>ID Proveedor</th>
+                            <th>Imagen Proveedor</th>
+                            <th>Nombre Proveedor</th>
+                            <th>N° de Telefono</th>
+                            <th>Servicio Provee</th>
+                            <th>Nombre Cementerio Labora</th>
+                            <th>Acción</th>
+                        </thead>
+                        <tbody>
+                            <?= $this->tabla ?>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Modal  para agregar Proveedor de Servicio-->
+    <div class="modal fade" id="modalAgregarProveedor" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#ecc006">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Nuevo Proveedor</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form class="row" method="post" id="formAgregarProveedor" enctype="multipart/form-data">
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Servicio</label>
+                                <select class="form-select" name="cementerioOperario" id="cementerioOperario">
+                                    <?= $this->servicios; ?>
+                                </select>
+
+                            </div>
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Operario que brindara el servicio</label>
+                                <select class="form-select" name="cementerioOperario" id="cementerioOperario">
+                                    <?= $this->operarios; ?>
+                                </select>
+                            </div>
+
+
+                          
+
+
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-ban"></i>
+                        Cancelar</button>
+                    <button type="submit" style="color:#fff"  class="btn btn-warning"><i class="fa-solid fa-plus"></i> Agregar
+                        Registro</button>
+                </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</main>

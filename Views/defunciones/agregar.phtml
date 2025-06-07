@@ -1,0 +1,261 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>HappyMemories</h1>
+        <nav>
+            <ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="<?= BASE_URL ?>"index>Home</a></li>                <li class="breadcrumb-item">Defunciones</li>
+                <li class="breadcrumb-item active">Agregar</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+            <div class="card">
+                <center>
+                    <h4 class="card-header">Registro de Defunciones</h4>
+                </center>
+
+
+                <div class="card-body mt-5">
+                    <div class="row">
+
+                        <h4 class="mt-1">A. Datos del Fallecido</h4>
+                        <form class="row" method="post" id="formAgregarDefuncion" enctype="multipart/form-data">
+                            <div class="mb-3 col-lg-3">
+                                <label for="" class="form-label">Primer Nombre</label>
+                                <input type="text" class="form-control" id="pNombre" name="pNombre" required>
+                            </div>
+
+                            <div class="mb-3 col-lg-3">
+                                <label for="" class="form-label">Segundo Nombre</label>
+                                <input type="text" class="form-control" id="sNombre" name="sNombre" required>
+                            </div>
+
+                            <div class="mb-3 col-lg-3">
+                                <label for="" class="form-label">Primer Apellido</label>
+                                <input type="text" class="form-control" id="pApellido" name="pApellido" required>
+                            </div>
+
+                            <div class="mb-3 col-lg-3">
+                                <label for="" class="form-label">Segundo Apellido</label>
+                                <input type="text" class="form-control" id="sApellido" name="sApellido" required>
+                            </div>
+
+                            <div class="mb-3 col-lg-3">
+                                <label for="" class="form-label">Cedula</label>
+                                <input type="text" class="form-control" id="cedula" name="cedula" required>
+                            </div>
+
+                            <div class="mb-3 col-lg-3">
+                                <label for="" class="form-label">Etnia</label>
+                                <input type="text" class="form-control" id="etnia" name="etnia" required>
+                            </div>
+
+
+                            <div class="mb-3 col-lg-3">
+                                <label for="" class="form-label">Departamento</label>
+                                <select id="departamentoOrigen" name="departamentoOrigen" class="form-select">
+                                    <?= $this->departamentos ?>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 col-lg-3">
+                                <label for="" class="form-label">Municipio</label>
+                                <select id="municipioOrigen" name="municipioOrigen" class="form-select">
+
+                                </select>
+                            </div>
+
+
+
+                            <div class="mb-3 col-lg-3">
+                                <label for="" class="form-label">Fecha Nacimiento</label>
+                                <input type="date" class="form-control" id="fechaNacio" name="fechaNacio" required>
+                            </div>
+
+
+
+                            <div class="mb-3 col-lg-3">
+                                <label for="sexo" class="form-label">Sexo</label>
+                                <select name="sexoDifunto" id="sexoDifunto" class="form-select">
+                                    <option value="0">Seleciona Una Opción</option>
+                                    <option value="Masculino">Hombre</option>
+                                    <option value="Femenino">Mujer</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 col-lg-3">
+                                <label for="nacionalidad" class="form-label">Nacionalidad</label>
+                                <select id="nacionalidad" name="nacionalidad" class="form-select">
+                                    <option value="0">Seleciona Una Opción</option>
+                                    <option value="Nicaraguense">Nicaragüense</option>
+                                    <option value="Extrangero">Extranjero</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 col-lg-4">
+                                <label for="fechaDefuncion" class="form-label">Ocupación</label>
+                                <input type="text" class="form-control" name="ocupacion" id="ocupacion" required>
+                            </div>
+
+
+                            <div class="mb-3 col-lg-4">
+                                <label for="estadoCivil" class="form-label">Estado Civil</label>
+                                <select id="estadoCivil" name="estadoCivil" class="form-select">
+                                    <option value="0">Seleciona Una Opción</option>
+                                    <option value="Union Libre">Unión de Hecho</option>
+                                    <option value="Casado">Casado(a)</option>
+                                    <option value="Soltero">Soltero(a)</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 col-lg-4">
+                                <label for="fechaDefuncion" class="form-label">Nombre Conyugue</label>
+                                <input type="text" class="form-control" name="conyugue" id="conyugue">
+                            </div>
+
+
+
+                    </div>
+
+
+                    <h4 class="mt-4">B. Datos de la Defunción</h4>
+                    <div class="row mb-3">
+                        <div class="mb-3 col-lg-4">
+                            <label for="fechaDefuncion" class="form-label">Fecha de Defunción</label>
+                            <input type="date" class="form-control" name="fechaDefuncion" id="fechaDefuncion" required>
+                        </div>
+
+                        <div class="mb-3 col-lg-4">
+                            <label for="" class="form-label">Edad Cumplida</label>
+                            <input type="text" class="form-control" id="edadCumplida" name="edadCumplida" required>
+                        </div>
+
+                        <div class="mb-3 col-lg-4">
+                            <label for="" class="form-label">Departamento Defunción</label>
+                            <select id="departamentoDefuncion" name="departamentoDefuncion" class="form-select">
+                                <?= $this->departamentos ?>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 col-lg-4">
+                            <label for="" class="form-label">Municipio Defunción</label>
+                            <select id="municipioDefuncion" name="municipioDefuncion" class="form-select">
+
+                            </select>
+                        </div>
+
+                        <div class="mb-3 col-lg-4">
+                            <label for="" class="form-label">Causa Defunción</label>
+                            <select id="causa" name="causa" class="form-select js-example-basic-single">
+                                <?= $this->causas ?>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 col-lg-4">
+                            <label for="fechaDefuncion" class="form-label">Hora de Defunción</label>
+                            <input type="time" class="form-control" name="horaDefuncion" id="horaDefuncion" required>
+                        </div>
+
+
+
+
+
+
+
+
+
+                    </div>
+
+
+                    <h4 class="mt-4">B. Datos del Familiar</h4>
+                    <div class="row mb-3">
+                        <div class="mb-3 col-lg-6">
+                            <label for="fechaDefuncion" class="form-label">Nombre Completo Familiar</label>
+                            <input type="text" class="form-control" name="nombreFamiliar" id="nombreFamiliar" required>
+                        </div>
+                        <div class="mb-3 col-lg-3">
+                            <label for="sexo" class="form-label">Sexo Familiar</label>
+                            <select id="sexoFamiliar" name="sexoFamiliar" class="form-select">
+                                <option value="0">Seleciona Una Opción</option>
+                                <option value="Masculino">Hombre</option>
+                                <option value="Femenino">Mujer</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 col-lg-3">
+                            <label for="" class="form-label">Correo Electronico</label>
+                            <input type="email" class="form-control" name="correoFamiliar" id="correoFamiliar" required>
+                        </div>
+
+                        <div class="mb-3 col-lg-4">
+                            <label for="" class="form-label">Nombre de Usuario</label>
+                            <input type="text" class="form-control" name="userFamiliar" id="userFamiliar" required>
+                        </div>
+
+                        <div class="mb-3 col-lg-4">
+                            <label for="" class="form-label">Contraseña Usuario</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="claveFamiliar" name="claveFamiliar"
+                                    required>
+                                <span id="ocultar" class="input-group-text"><i
+                                        onclick="ocultarPass('claveFamiliar',this);" class="fa-solid fa-eye"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-lg-4">
+                            <label for="" class="form-label">Repita Contraseña </label>
+                            <div class="input-group">
+
+
+
+                                <input type="password" class="form-control" id="repetirClaveFamiliar"
+                                    name="repetirClaveFamiliar" required>
+
+                                <span class="input-group-text"><i onclick="ocultarPass('repetirClaveFamiliar',this);"
+                                        class="fa-solid fa-eye"></i></span>
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+                </div>
+                <!-- End Card Body -->
+                <!-- Inicio de Card Footer -->
+                <div class="card-footer">
+                    <div class="row justify-content-end">
+                        <div class="col-lg-auto ">
+                            <a href="<?= BASE_URL ?>cementerio" class="btn btn-danger"><i class="fa-solid fa-ban"></i>
+                                Regresar</a>
+                            <button style="color:#fff" type="submit" class="btn btn-warning"><i
+                                    class="fa-solid fa-plus"></i> Agregar
+                                Registro</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                </form>
+
+
+            </div>
+        </div>
+
+    </section>
+
+</main>

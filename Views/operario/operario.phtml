@@ -1,0 +1,167 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>HappyMemories</h1>
+        <nav>
+            <ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="<?= BASE_URL ?>"index>Home</a></li>                <li class="breadcrumb-item active">Servicios</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <center>
+                        <h4 class="card-header">Registro y Listado de Servicios Ofrecidos</h4>
+                    </center>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end pt-3">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#modalAgregarOperario">
+                            <i class="fa-solid fa-plus"></i> Agregar Nuevo
+                        </button>
+                    </div>
+
+
+                </div>
+                <div class="card-body mt-5">
+
+                    <table id="table" class="display">
+                        <thead>
+                            <th>ID Proveedor</th>
+                            <th>Foto Operario</th>
+                            <th>Nombre Proveedor</th>
+                            <th>N° de Telefono</th>
+                            <th>Direccion</th>
+                            <th>Especialidad</th>
+                            <th>Estado</th>
+                            <th>Nombre Cementerio Labora</th>
+
+                            <th>Acción</th>
+                        </thead>
+                        <tbody>
+                            <?= $this->tabla ?>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+     <!-- Modal  para agregar operario-->
+     <div class="modal fade" id="modalAgregarOperario" tabindex="-1"  data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#ecc006">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Nuevo Operario</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <form class="row" method="post" id="formAgregarOperario" enctype="multipart/form-data">
+
+                        <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Cementerio Labora</label>
+                                <select class="form-select" name="cementerioOperario" id="cementerioOperario">
+                                    <?=$this->cementerios;?>
+                                </select>
+
+                            </div>
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Nombre Completo del Operario</label>
+                                <input type="text" class="form-control" id="nombreOperario" name="nombreOperario" required>
+                            </div>
+
+                            <div class="mb-3 col-lg-4">
+                                <label for="" class="form-label">Numero de Telefono</label>
+                                <input type="text" class="form-control" id="telefonoOperario" name="telefonoOperario" required>
+                            </div>
+
+                            <div class="mb-3 col-lg-4">
+                                <label for="" class="form-label">Estado</label>
+                                <select class="form-select" name="estadoOperario" id="estadoOperario">
+                                    <option value="Activo">Activo</option>
+                                    <option value="Inactivo">Inactivo</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 col-lg-4">
+                                <label for="" class="form-label">Especialidad</label>
+                                <input type="text" class="form-control" name="especialidadOperario" id="especialidadOperario">
+                            </div>
+
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Dirección Reside</label>
+                                <textarea class="form-control" rows="3" name="direccionOperario" id="direccionOperario"></textarea>
+                            </div>
+
+                            <div class="mb-3 col-lg-12">
+                                <label for="" class="form-label">Foto del Operario</label>
+                                <input type="file" name="fotoOperario" id="fotoOperario" class="form-control">
+                            </div>
+
+                            <div class="mb-3 col-lg-4">
+                            <label for="" class="form-label">Nombre de Usuario</label>
+                            <input type="text" class="form-control" name="userOperario" id="userOperario" required>
+                        </div>
+
+                        <div class="mb-3 col-lg-4">
+                            <label for="" class="form-label">Contraseña Usuario</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="claveOperario" name="claveOperario"
+                                    required>
+                                <span id="ocultar" class="input-group-text"><i
+                                        onclick="ocultarPass('claveOperario',this);" class="fa-solid fa-eye"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-lg-4">
+                            <label for="" class="form-label">Repita Contraseña </label>
+                            <div class="input-group">
+
+
+
+                                <input type="password" class="form-control" id="repetirOperario"
+                                    name="repetirOperario" required>
+
+                                <span class="input-group-text"><i onclick="ocultarPass('repetirOperario',this);"
+                                        class="fa-solid fa-eye"></i></span>
+                            </div>
+
+
+                        </div>
+                           
+
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-ban"></i> Cancelar</button>
+                    <button type="submit"style="color:#fff"  class="btn btn-warning"><i class="fa-solid fa-plus"></i> Agregar Registro</button>
+                </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+
+
+
+</main>
